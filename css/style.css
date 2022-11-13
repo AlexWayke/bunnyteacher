@@ -84,13 +84,12 @@ body {
 }
 
 .mainscreen {
-  position: absolute;
   width: 100%;
   height: 100vh;
   color: #fff;
 }
 .mainscreen-bg {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
