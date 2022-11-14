@@ -98,6 +98,10 @@ body {
   display: none;
 }
 
+.change-text {
+  z-index: -10;
+}
+
 .mainscreen {
   width: 100%;
   height: 100vh;
@@ -158,10 +162,12 @@ body {
   padding-bottom: 100px;
 }
 .about-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 6vw;
   border: #fff 0.2vw solid;
   width: 40%;
-  text-align: center;
   padding: 20px;
 }
 .about-wrapper {

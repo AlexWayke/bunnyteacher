@@ -39,6 +39,9 @@ body {
     font-size: 0;
     display: none;
 }
+.change-text {
+    z-index: -10;
+}
 // Mainscreen =========================
 .mainscreen {
 width: 100%;
@@ -99,10 +102,12 @@ color: #fff;
     align-items: center;
     padding-bottom: 100px;
     &-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin-bottom: 6vw;
         border: #fff 0.2vw solid;
         width: 40%;
-        text-align: center;
         padding: 20px;
     }
     &-wrapper {
