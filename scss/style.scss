@@ -11,8 +11,20 @@ h1 {
     font-size: 3.3vw;
     line-height: 1.2em;
 }
+h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 3vw;
+    line-height: 1.2em;
+}
 .chinese {
     font-family: Noto Serif SC;
+}
+.change-box {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 3vw;
+    line-height: 1.2em;
 }
 // Main styles ========================
 body {
@@ -20,11 +32,12 @@ body {
     width: 100%;
 }
 .container {
-    max-width: 89vw;
+    max-width: 69vw;
     margin: 0 auto;
 }
 .new-text {
     font-size: 0;
+    display: none;
 }
 // Mainscreen =========================
 .mainscreen {
@@ -63,9 +76,8 @@ color: #fff;
     &-title {
         display: flex;
         align-items: center;
-        text-align: center;
+        text-align: left;
         margin-bottom: 20px;
-        text-align: justify;
         width: 27.77vw;
         height: 27.77vw;
         padding: 1.39vw;
@@ -82,16 +94,68 @@ color: #fff;
 
 // About ==============================
 .about {
-    .about-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 100px;
+    &-title {
+        margin-bottom: 6vw;
+        border: #fff 0.2vw solid;
+        width: 40%;
+        text-align: center;
+        padding: 20px;
     }
-    .about-photo {
+    &-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
-    .about-info {
+    &-photo {
+        position: relative;
+        display: inline-flex;
+        flex: 1 1 30%;
+        align-items: center;
+        justify-content: center;
+        height: fit-content;
+        border: 0.55vw #fff solid;
+        &::after{
+            content: '';
+            position: absolute;
+            top: -1.4vw;
+            left: -1.4vw;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #fff;
+            z-index: -5;
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            top: 1.4vw;
+            right: -1.4vw;
+            width: 100%;
+            height: 100%;
+            border: 4px solid #fff;
+            z-index: -5;
+        }
+        & img {
+            object-fit: cover;
+            width: 101%;
+            height: 105%;
+            margin: -2px 0 0 -2px;
+        }
     }
-    .about-title {
+    &-info {
+        display: inline-flex;
+        flex: 1 1 30%;
+        flex-direction: column;
+        color: #fff;
+        padding: 0 2.77vw;
+        box-sizing: border-box;
     }
-    .new-text {
-    }
-    .about-text {
+    &-text {
+        font-size: 1.25vw;
+        line-height: 1.2em;
+        margin-bottom: 1.4vw;
     }
 }
