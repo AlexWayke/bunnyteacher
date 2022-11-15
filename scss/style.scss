@@ -8,11 +8,10 @@
 
 h1 {
     text-transform: uppercase;
-    font-size: 3.3vw;
+    font-size: 2.5vw;
     line-height: 1.2em;
 }
 h2 {
-    color: #fff;
     text-transform: uppercase;
     font-size: 3vw;
     line-height: 1.2em;
@@ -21,15 +20,14 @@ h2 {
     font-family: Noto Serif SC;
 }
 .change-box {
-    color: #fff;
     text-transform: uppercase;
-    font-size: 3vw;
     line-height: 1.2em;
 }
 // Main styles ========================
 body {
     font-family: Comfortaa;
     width: 100%;
+    color: #fff;
 }
 .container {
     max-width: 69vw;
@@ -42,11 +40,22 @@ body {
 .change-text {
     z-index: -10;
 }
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 6vw;
+    border: #fff 0.2vw solid;
+    width: 40%;
+    min-height: 8.33vw;
+    padding: 20px;
+    box-sizing: border-box;
+}
 // Mainscreen =========================
 .mainscreen {
 width: 100%;
 height: 100vh;
-color: #fff;
     &-bg {
         position: fixed;
         top: 0;
@@ -81,13 +90,14 @@ color: #fff;
         align-items: center;
         text-align: left;
         margin-bottom: 20px;
-        width: 27.77vw;
-        height: 27.77vw;
+        width: 25vw;
+        height: 25vw;
         padding: 1.39vw;
         border: #fff solid 4px;
         cursor: pointer;
         & h1 {
             display: inline-block;
+            margin: 0 auto;
         }
     }
     &-subtitle {
@@ -100,16 +110,7 @@ color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 100px;
-    &-title {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 6vw;
-        border: #fff 0.2vw solid;
-        width: 40%;
-        padding: 20px;
-    }
+    padding-bottom: 200px;
     &-wrapper {
         display: flex;
         flex-direction: row;
@@ -147,14 +148,13 @@ color: #fff;
             object-fit: cover;
             width: 101%;
             height: 105%;
-            margin: -2px 0 0 -2px;
+            margin: -2px;
         }
     }
     &-info {
         display: inline-flex;
         flex: 1 1 30%;
         flex-direction: column;
-        color: #fff;
         padding: 0 2.77vw;
         box-sizing: border-box;
     }
@@ -162,5 +162,80 @@ color: #fff;
         font-size: 1.25vw;
         line-height: 1.2em;
         margin-bottom: 1.4vw;
+    }
+}
+
+// Achievements =======================
+.achievements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-wrapper {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 14vw;
+    }
+    &-item {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        width: 33.3333%;
+        margin: 3.5vw 2vw;
+        border: #fff 0.28vw solid;
+        &:first-child {
+            margin-left: 0;
+            margin-top: 0;
+            margin-bottom: 7vw;
+        }
+        &:last-child {
+            margin-right: 0;
+            margin-top: 7vw;
+            margin-bottom: 0;
+        }
+        &--img {
+            position: relative;
+            width: 100%;
+            height: 30vw;
+            overflow: hidden;
+            border-bottom: #fff 0.28vw solid;
+            margin-bottom: 1.4vw;
+            &::after{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #00000060;
+                transition: all .3s ease;
+                
+            }
+            &:hover::after {
+                background-color: #00000000;
+            }
+            & img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &--info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.4vw;
+            padding: 0 0.7vw 0.7vw 0.7vw;
+            box-sizing: border-box;
+            margin-bottom: auto;
+        }
+        &--title {
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 1.7vw;
+            line-height: 1.2em;
+        }
+        &--text {
+            font-size: 1.25vw;
+            line-height: 1.6em;
+        }
     }
 }
