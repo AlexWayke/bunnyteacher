@@ -3,13 +3,7 @@
 
 
 // Fonts ==============================
-@import url(https://fonts.googleapis.com/css?family=Ma+Shan+Zheng:regular);
-@font-face {
-    font-family: Arcon;
-    font-style: normal;
-    font-weight: 400;
-    src: url(/src/fonts/Arcon-Regular.woff2);
-}
+@import url(https://fonts.googleapis.com/css?family=Jost:regular);
 @font-face {
     font-family: chinese;
     font-style: normal;
@@ -21,11 +15,18 @@ h1 {
     text-transform: uppercase;
     font-size: 2.5vw;
     line-height: 1.2em;
+    @media (max-width: 1020px) {
+        font-size: 7vw;
+    }
 }
 h2 {
     text-transform: uppercase;
-    font-size: 3vw;
+    font-size: 2vw;
     line-height: 1.2em;
+    @media (max-width: 1020px) {
+        font-size: 5.4vw;
+        letter-spacing: -0.1em;
+    }
 }
 // Colors =============================
 :root {
@@ -41,11 +42,14 @@ body {
     background-color: var(--color-dark);
     cursor: default;
     color: var(--color-main);
-    font-family: Arcon;
+    font-family: Jost;
 }
 .container {
     max-width: 62.5vw;
     margin: 0 auto;
+    @media (max-width: 1020px) {
+        max-width: 92vw;        
+    }
 }
 .new-text {
     font-size: 0;
@@ -66,17 +70,17 @@ body {
         justify-content: center;
         text-align: center;
         margin-bottom: 6vw;
-        border: #fff 0.2vw solid;
+        border: var(--color-main) 0.2vw solid;
         width: 40%;
         min-height: 8.33vw;
-        padding: 1.38vw;
+        padding: 1em 1.25em;
         box-sizing: border-box;
         font-family: chinese;
         letter-spacing: -0.5em;
         cursor: pointer;
         &--black {
-            border: #111 0.2vw solid;
-            color: #111;
+            border: 0.2vw var(--color-dark) solid;
+            color: var(--color-dark);
         }
     }
     &-count {
@@ -85,6 +89,21 @@ body {
         right: 4vw;
         font-size: 10vw;
         font-family: chinese;
+    }
+    @media (max-width: 1020px) {
+        &-title {
+            width: 80%;
+            min-height: 16.8vw;
+            margin-bottom: 10.66vw;
+            padding: 1em 0.7em;
+            border: var(--color-main) 0.94vw solid;
+            &--black {
+                border: 0.94vw var(--color-dark) solid;
+            }
+        }
+        &-count {
+            font-size: 15vw;
+        }
     }
 }
 // Header =============================
@@ -231,7 +250,7 @@ height: 100vh;
         width: 25vw;
         height: 25vw;
         padding: 1.39vw;
-        border: #fff solid 0.2vw;
+        border: var(--color-main) solid 0.2vw;
         cursor: pointer;
         & h1 {
             display: inline-block;
@@ -240,6 +259,18 @@ height: 100vh;
     }
     &-subtitle {
         font-size: 1.5vw;
+        line-height: 1.2em;
+    }
+    @media (max-width: 1020px) {
+        &-title {
+            width: 70vw;
+            height: 70vw;
+            border: var(--color-main) solid 0.94vw;
+            margin-bottom: 5.33vw;
+        }
+        &-subtitle {
+            font-size: 4.8vw;
+        }
     }
 }
 
@@ -261,7 +292,7 @@ height: 100vh;
         align-items: center;
         justify-content: center;
         height: fit-content;
-        border: 0.2vw #fff solid;
+        border: 0.2vw var(--color-main) solid;
         &::after{
             content: '';
             position: absolute;
@@ -275,7 +306,7 @@ height: 100vh;
         &::before{
             content: '';
             position: absolute;
-            top: 1.4vw;
+            bottom: -1.4vw;
             right: -1.4vw;
             width: 100%;
             height: 100%;
@@ -299,6 +330,33 @@ height: 100vh;
         font-size: 1.25vw;
         line-height: 1.2em;
         margin-bottom: 1.4vw;
+    }
+    @media (max-width: 1020px) {
+        padding: 5.33vw 0 12vw;
+        &-wrapper {
+            flex-direction: column;
+        }
+        &-photo {
+            margin-bottom: 5.33vw;
+            width: 75%;
+            border: 0.94vw var(--color-main) solid;
+            &::after {
+                top: -4vw;
+                left: -4vw;
+                border: 0.47vw solid #fff;
+            }
+            &::before {
+                bottom: -4vw;
+                right: -4vw;
+                border: 0.47vw solid #fff;
+            }
+        }
+        &-text {
+            font-size: 4.8vw;
+            margin-bottom: 5.33vw;
+            padding: 0;
+            text-align: center;
+        }
     }
 }
 
@@ -330,7 +388,7 @@ height: 100vh;
         flex-direction: column;
         width: 33.3333%;
         margin: 3.5vw 2vw;
-        border: #111 0.2vw solid;
+        border: var(--color-dark) 0.2vw solid;
         overflow: hidden;
         &:first-child {
             margin-left: 0;
@@ -347,7 +405,7 @@ height: 100vh;
             width: 110%;
             height: 25vw;
             overflow: hidden;
-            border-bottom: #111 0.2vw solid;
+            border-bottom: var(--color-dark) 0.2vw solid;
             margin-bottom: 1.4vw;
             &::after{
                 content: '';
@@ -385,6 +443,56 @@ height: 100vh;
         &--text {
             font-size: 1.25vw;
             line-height: 1.2em;
+        }
+    }
+    @media (max-width: 1020px) {
+        padding: 5.33vw 0 14vw;
+        &-wrapper {
+            flex-direction: column;
+            gap: 5.33vw;
+        }
+        &-item {
+            width: 100%;
+            height: 40vh;
+            
+            margin: 0;
+            flex-direction: row;
+            border: var(--color-dark) 0.94vw solid;
+            &:first-child {
+                margin: 0;
+            }
+            &:last-child {
+                margin: 0;
+            }
+            &--img {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 30%;
+                height: 100%;
+                margin-bottom: 0;
+                border-bottom: none;
+                & img {
+                    object-fit: cover;
+                    height: 100%;
+                    width: auto;
+                }
+                &::after {
+                    display: none;
+                }
+            }
+            &--info {
+                gap: 4.8vw;
+                padding: 4.8vw;
+                display: inline-flex;
+                width: 70%;
+            }
+            &--title {
+                font-size: 5.33vw;
+            }
+            &--text {
+                font-size: 4.8vw;
+            }
         }
     }
 }

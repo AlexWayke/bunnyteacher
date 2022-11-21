@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Ma+Shan+Zheng:regular);
+@import url(https://fonts.googleapis.com/css?family=Jost:regular);
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -59,12 +59,6 @@ input {
 }
 
 @font-face {
-  font-family: Arcon;
-  font-style: normal;
-  font-weight: 400;
-  src: url(/src/fonts/Arcon-Regular.woff2);
-}
-@font-face {
   font-family: chinese;
   font-style: normal;
   font-weight: 400;
@@ -75,11 +69,22 @@ h1 {
   font-size: 2.5vw;
   line-height: 1.2em;
 }
+@media (max-width: 1020px) {
+  h1 {
+    font-size: 7vw;
+  }
+}
 
 h2 {
   text-transform: uppercase;
-  font-size: 3vw;
+  font-size: 2vw;
   line-height: 1.2em;
+}
+@media (max-width: 1020px) {
+  h2 {
+    font-size: 5.4vw;
+    letter-spacing: -0.1em;
+  }
 }
 
 :root {
@@ -94,12 +99,17 @@ body {
   background-color: var(--color-dark);
   cursor: default;
   color: var(--color-main);
-  font-family: Arcon;
+  font-family: Jost;
 }
 
 .container {
   max-width: 62.5vw;
   margin: 0 auto;
+}
+@media (max-width: 1020px) {
+  .container {
+    max-width: 92vw;
+  }
 }
 
 .new-text {
@@ -124,18 +134,18 @@ body {
   justify-content: center;
   text-align: center;
   margin-bottom: 6vw;
-  border: #fff 0.2vw solid;
+  border: var(--color-main) 0.2vw solid;
   width: 40%;
   min-height: 8.33vw;
-  padding: 1.38vw;
+  padding: 1em 1.25em;
   box-sizing: border-box;
   font-family: chinese;
   letter-spacing: -0.5em;
   cursor: pointer;
 }
 .section-title--black {
-  border: #111 0.2vw solid;
-  color: #111;
+  border: 0.2vw var(--color-dark) solid;
+  color: var(--color-dark);
 }
 .section-count {
   position: absolute;
@@ -143,6 +153,21 @@ body {
   right: 4vw;
   font-size: 10vw;
   font-family: chinese;
+}
+@media (max-width: 1020px) {
+  .section-title {
+    width: 80%;
+    min-height: 16.8vw;
+    margin-bottom: 10.66vw;
+    padding: 1em 0.7em;
+    border: var(--color-main) 0.94vw solid;
+  }
+  .section-title--black {
+    border: 0.94vw var(--color-dark) solid;
+  }
+  .section-count {
+    font-size: 15vw;
+  }
 }
 
 .header {
@@ -287,7 +312,7 @@ body {
   width: 25vw;
   height: 25vw;
   padding: 1.39vw;
-  border: #fff solid 0.2vw;
+  border: var(--color-main) solid 0.2vw;
   cursor: pointer;
 }
 .mainscreen-title h1 {
@@ -296,6 +321,18 @@ body {
 }
 .mainscreen-subtitle {
   font-size: 1.5vw;
+  line-height: 1.2em;
+}
+@media (max-width: 1020px) {
+  .mainscreen-title {
+    width: 70vw;
+    height: 70vw;
+    border: var(--color-main) solid 0.94vw;
+    margin-bottom: 5.33vw;
+  }
+  .mainscreen-subtitle {
+    font-size: 4.8vw;
+  }
 }
 
 .about {
@@ -318,7 +355,7 @@ body {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  border: 0.2vw #fff solid;
+  border: 0.2vw var(--color-main) solid;
 }
 .about-photo::after {
   content: "";
@@ -333,7 +370,7 @@ body {
 .about-photo::before {
   content: "";
   position: absolute;
-  top: 1.4vw;
+  bottom: -1.4vw;
   right: -1.4vw;
   width: 100%;
   height: 100%;
@@ -357,6 +394,35 @@ body {
   font-size: 1.25vw;
   line-height: 1.2em;
   margin-bottom: 1.4vw;
+}
+@media (max-width: 1020px) {
+  .about {
+    padding: 5.33vw 0 12vw;
+  }
+  .about-wrapper {
+    flex-direction: column;
+  }
+  .about-photo {
+    margin-bottom: 5.33vw;
+    width: 75%;
+    border: 0.94vw var(--color-main) solid;
+  }
+  .about-photo::after {
+    top: -4vw;
+    left: -4vw;
+    border: 0.47vw solid #fff;
+  }
+  .about-photo::before {
+    bottom: -4vw;
+    right: -4vw;
+    border: 0.47vw solid #fff;
+  }
+  .about-text {
+    font-size: 4.8vw;
+    margin-bottom: 5.33vw;
+    padding: 0;
+    text-align: center;
+  }
 }
 
 .achievements {
@@ -387,7 +453,7 @@ body {
   flex-direction: column;
   width: 33.3333%;
   margin: 3.5vw 2vw;
-  border: #111 0.2vw solid;
+  border: var(--color-dark) 0.2vw solid;
   overflow: hidden;
 }
 .achievements-item:first-child {
@@ -405,7 +471,7 @@ body {
   width: 110%;
   height: 25vw;
   overflow: hidden;
-  border-bottom: #111 0.2vw solid;
+  border-bottom: var(--color-dark) 0.2vw solid;
   margin-bottom: 1.4vw;
 }
 .achievements-item--img::after {
@@ -443,6 +509,58 @@ body {
 .achievements-item--text {
   font-size: 1.25vw;
   line-height: 1.2em;
+}
+@media (max-width: 1020px) {
+  .achievements {
+    padding: 5.33vw 0 14vw;
+  }
+  .achievements-wrapper {
+    flex-direction: column;
+    gap: 5.33vw;
+  }
+  .achievements-item {
+    width: 100%;
+    height: 40vh;
+    margin: 0;
+    flex-direction: row;
+    border: var(--color-dark) 0.94vw solid;
+  }
+  .achievements-item:first-child {
+    margin: 0;
+  }
+  .achievements-item:last-child {
+    margin: 0;
+  }
+  .achievements-item--img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 100%;
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+  .achievements-item--img img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 100%;
+    width: auto;
+  }
+  .achievements-item--img::after {
+    display: none;
+  }
+  .achievements-item--info {
+    gap: 4.8vw;
+    padding: 4.8vw;
+    display: inline-flex;
+    width: 70%;
+  }
+  .achievements-item--title {
+    font-size: 5.33vw;
+  }
+  .achievements-item--text {
+    font-size: 4.8vw;
+  }
 }
 
 .contact {
