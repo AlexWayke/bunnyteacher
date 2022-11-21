@@ -82,15 +82,18 @@ h2 {
   line-height: 1.2em;
 }
 
-.chinese {
-  font-family: chinese;
+:root {
+  --color-main: #fffafa;
+  --color-lighter: #fffafacc;
+  --color-dark: #070707;
+  --color-darker: #07070798;
 }
 
 body {
   width: 100%;
-  background-color: rgb(17, 17, 17);
+  background-color: var(--color-dark);
   cursor: default;
-  color: #fff;
+  color: var(--color-main);
   font-family: Arcon;
 }
 
@@ -108,6 +111,8 @@ body {
   z-index: -5;
   text-transform: uppercase;
   line-height: 1.2em;
+  font-family: chinese;
+  font-weight: 700;
 }
 
 .section {
@@ -126,6 +131,7 @@ body {
   padding: 1.38vw;
   box-sizing: border-box;
   font-family: chinese;
+  font-weight: 700;
   cursor: pointer;
 }
 .section-title--black {
@@ -137,6 +143,74 @@ body {
   bottom: 2vw;
   right: 4vw;
   font-size: 10vw;
+  font-family: chinese;
+  font-weight: 700;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+}
+.header-hide {
+  right: 0;
+}
+.header-wrapper {
+  width: 100%;
+  padding: 2vw 0;
+}
+.header-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-menu--li {
+  position: relative;
+  text-shadow: 0 0 0.2vw var(--color-darker);
+  box-shadow: 0 0 0.4vw var(--color-darker);
+  padding: 0.2vw 1vw;
+  font-size: 1.25vw;
+  line-height: 1.2em;
+  cursor: pointer;
+}
+.header-menu--li:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 40%;
+  border-top: 0.2vw solid var(--color-main);
+  border-left: 0.2vw solid var(--color-main);
+  transition: all 0.3s ease;
+}
+.header-menu--li:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+  height: 40%;
+  border-bottom: 0.2vw solid var(--color-main);
+  border-right: 0.2vw solid var(--color-main);
+  transition: all 0.3s ease;
+}
+.header-menu--li:hover:after {
+  width: 100%;
+  height: 100%;
+}
+.header-menu--li:hover:before {
+  width: 100%;
+  height: 100%;
+}
+.header-menu--li.active:after {
+  width: 100%;
+  height: 100%;
+}
+.header-menu--li.active:before {
+  width: 100%;
+  height: 100%;
 }
 
 .mainscreen {
@@ -164,7 +238,7 @@ body {
   left: 0;
   width: 100%;
   height: 6vh;
-  background: linear-gradient(0deg, rgb(17, 17, 17) 0%, rgba(17, 17, 17, 0.8) 50%, rgba(17, 17, 17, 0) 100%);
+  background: linear-gradient(0deg, var(--color-dark) 0%, var(--color-darker) 50%, rgba(17, 17, 17, 0) 100%);
 }
 .mainscreen-wrapper {
   display: flex;
@@ -237,9 +311,8 @@ body {
 .about-photo img {
   -o-object-fit: cover;
      object-fit: cover;
-  width: 101%;
-  height: 105%;
-  margin: -0.14vw;
+  width: 100%;
+  height: 100%;
 }
 .about-info {
   display: inline-flex;
@@ -260,7 +333,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 2.78vw 0 13.89vw;
-  color: #111;
+  color: var(--color-dark);
 }
 .achievements::before {
   content: "";
@@ -269,7 +342,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fffafa;
+  background-color: var(--color-main);
   z-index: -10;
 }
 .achievements-wrapper {
@@ -310,7 +383,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.1254901961);
+  background-color: var(--color-darker);
   transition: all 0.3s ease;
 }
 .achievements-item--img:hover::after {
@@ -347,7 +420,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2.78vw 0 2.78vw;
+  padding: 3.33vw 0 2.78vw;
   overflow: hidden;
 }
 .contact-bg {
@@ -370,7 +443,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5019607843);
+  background-color: var(--color-darker);
 }
 .contact-wrapper {
   display: flex;
@@ -382,6 +455,10 @@ body {
   font-size: 1.8vw;
   line-height: 1.2em;
   margin-bottom: 1.8vw;
+}
+.contact-text span {
+  font-family: chinese;
+  font-weight: 700;
 }
 .contact-tel {
   display: block;
@@ -447,7 +524,7 @@ body {
   rotate: 45deg;
   width: 100%;
   height: 0.2vw;
-  background-color: #fff;
+  background-color: var(--color-main);
 }
 .contact-messengers::after {
   content: "";
@@ -457,7 +534,7 @@ body {
   rotate: -45deg;
   width: 100%;
   height: 0.2vw;
-  background-color: #fff;
+  background-color: var(--color-main);
 }
 .contact-icon {
   display: inline-flex;
@@ -490,4 +567,13 @@ body {
 }
 .contact-icon:hover a {
   height: 100%;
+}
+.contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4vh;
+  background: linear-gradient(180deg, var(--color-main) 0%, var(--color-lighter) 70%, rgba(17, 17, 17, 0) 100%);
 }

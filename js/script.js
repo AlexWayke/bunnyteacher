@@ -26,7 +26,6 @@ const reduceText = function(e) {
 const addText = function(e) {
     let text = e.firstElementChild;
     let newText = e.lastElementChild.innerHTML
-    text.classList.remove('chinese')
     let i = 0;
     let addTurn = setInterval(() => {
         if( i > newText.length) {

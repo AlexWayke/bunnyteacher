@@ -27,15 +27,21 @@ h2 {
     font-size: 3vw;
     line-height: 1.2em;
 }
-.chinese {
-    font-family: chinese;
+// Colors =============================
+
+:root {
+    --color-main: #fffafa;
+    --color-lighter: #fffafacc;
+    --color-dark: #070707;
+    --color-darker: #07070798;
 }
+
 // Main styles ========================
 body {
     width: 100%;
-    background-color: rgb(17, 17, 17);
+    background-color: var(--color-dark);
     cursor: default;
-    color: #fff;
+    color: var(--color-main);
     font-family: Arcon;
 }
 .container {
@@ -50,6 +56,8 @@ body {
     z-index: -5;
     text-transform: uppercase;
     line-height: 1.2em;
+    font-family: chinese;
+    font-weight: 700;
 }
 .section{
     position: relative;
@@ -66,6 +74,7 @@ body {
         padding: 1.38vw;
         box-sizing: border-box;
         font-family: chinese;
+        font-weight: 700;
         cursor: pointer;
         &--black {
             border: #111 0.2vw solid;
@@ -77,8 +86,81 @@ body {
         bottom: 2vw;
         right: 4vw;
         font-size: 10vw;
+        font-family: chinese;
+        font-weight: 700;
     }
 }
+// Header =============================
+.header {
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    &-hide {
+        right: 0;
+    }
+    &-wrapper {
+        width: 100%;
+        padding: 2vw 0;
+    }
+    &-menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        &--li {
+            position: relative;
+            text-shadow: 0 0 0.2vw  var(--color-darker);
+            box-shadow: 0 0 0.4vw  var(--color-darker);
+            padding: 0.2vw 1vw;
+            font-size: 1.25vw;
+            line-height: 1.2em;
+            cursor: pointer;
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 40%;
+                height: 40%;
+                border-top: 0.2vw solid var(--color-main);
+                border-left: 0.2vw solid var(--color-main);
+                transition: all .3s ease;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 40%;
+                height: 40%;
+                border-bottom: 0.2vw solid var(--color-main);
+                border-right: 0.2vw solid var(--color-main);
+                transition: all .3s ease;
+            }
+            &:hover {
+                &:after {
+                    width: 100%;
+                    height: 100%;
+                }
+                &:before {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            &.active {
+                &:after {
+                    width: 100%;
+                    height: 100%;
+                }
+                &:before {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
 // Mainscreen =========================
 .mainscreen {
 width: 100%;
@@ -102,7 +184,7 @@ height: 100vh;
             left: 0;
             width: 100%;
             height: 6vh;
-            background: linear-gradient(0deg, rgba(17, 17, 17,1) 0%, rgba(17, 17, 17,0.8) 50%, rgba(17, 17, 17,0) 100%);
+            background: linear-gradient(0deg, var(--color-dark) 0%, var(--color-darker) 50%, rgba(17, 17, 17,0) 100%);
         }
     }
     &-wrapper {
@@ -173,9 +255,8 @@ height: 100vh;
         }
         & img {
             object-fit: cover;
-            width: 101%;
-            height: 105%;
-            margin: -0.14vw;
+            width: 100%;
+            height: 100%;
         }
     }
     &-info {
@@ -199,7 +280,7 @@ height: 100vh;
     flex-direction: column;
     align-items: center;
     padding: 2.78vw 0 13.89vw;
-    color: #111;
+    color: var(--color-dark);
     &::before{
         content: '';
         position: absolute;
@@ -207,7 +288,7 @@ height: 100vh;
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #fffafa;
+        background-color: var(--color-main);
         z-index: -10;
     }
     &-wrapper {
@@ -246,7 +327,7 @@ height: 100vh;
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background-color: #00000020;
+                background-color: var(--color-darker);
                 transition: all .3s ease;
                 
             }
@@ -287,7 +368,7 @@ height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2.78vw 0 2.78vw;
+    padding: 3.33vw 0 2.78vw;
     overflow: hidden;
     &-bg {
         position: absolute;
@@ -307,7 +388,7 @@ height: 100vh;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #00000080;
+            background-color: var(--color-darker);
         }
 
     }
@@ -321,6 +402,10 @@ height: 100vh;
         font-size: 1.8vw;
         line-height: 1.2em;
         margin-bottom: 1.8vw;
+        & span {
+            font-family: chinese;
+            font-weight: 700;
+        }
     }
     &-tel {
         display: block;
@@ -383,7 +468,7 @@ height: 100vh;
             rotate: 45deg;
             width: 100%;
             height: 0.2vw;
-            background-color: #fff;
+            background-color: var(--color-main);
         }
         &::after {
             content: '';
@@ -393,7 +478,7 @@ height: 100vh;
             rotate: -45deg;
             width: 100%;
             height: 0.2vw;
-            background-color: #fff;
+            background-color: var(--color-main);
         }
     }
     &-icon {
@@ -429,5 +514,14 @@ height: 100vh;
                 height: 100%;
             }
         }
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4vh;
+        background: linear-gradient(180deg, var(--color-main) 0%, var(--color-lighter) 70%, rgba(17, 17, 17,0) 100%);
     }
 }
