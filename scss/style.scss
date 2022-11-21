@@ -13,8 +13,8 @@
 @font-face {
     font-family: chinese;
     font-style: normal;
-    font-weight: 700;
-    src: url(/src/fonts/Chinese_bold.woff2);
+    font-weight: 400;
+    src: url(/src/fonts/KaiTi.ttf);
 }
 
 h1 {
@@ -28,7 +28,6 @@ h2 {
     line-height: 1.2em;
 }
 // Colors =============================
-
 :root {
     --color-main: #fffafa;
     --color-lighter: #fffafacc;
@@ -57,7 +56,6 @@ body {
     text-transform: uppercase;
     line-height: 1.2em;
     font-family: chinese;
-    font-weight: 700;
 }
 .section{
     position: relative;
@@ -74,7 +72,7 @@ body {
         padding: 1.38vw;
         box-sizing: border-box;
         font-family: chinese;
-        font-weight: 700;
+        letter-spacing: -0.5em;
         cursor: pointer;
         &--black {
             border: #111 0.2vw solid;
@@ -87,7 +85,6 @@ body {
         right: 4vw;
         font-size: 10vw;
         font-family: chinese;
-        font-weight: 700;
     }
 }
 // Header =============================
@@ -95,6 +92,8 @@ body {
     width: 100%;
     position: fixed;
     z-index: 10;
+    font-family: chinese;
+    letter-spacing: -0.4em;
     &-hide {
         right: 0;
     }
@@ -111,7 +110,7 @@ body {
             position: relative;
             text-shadow: 0 0 0.2vw  var(--color-darker);
             box-shadow: 0 0 0.4vw  var(--color-darker);
-            padding: 0.2vw 1vw;
+            padding: 0.3em 1em;
             font-size: 1.25vw;
             line-height: 1.2em;
             cursor: pointer;
@@ -157,6 +156,36 @@ body {
                     height: 100%;
                 }
             }
+        }
+    }
+    @media (max-width: 1020px) {
+        width: 35.29vw;
+        height: 100vh;
+        border-left: 0.94vw solid var(--color-main);
+        background-color: var(--color-darker);
+        &-wrapper {
+            padding: 4.70vw 2vw;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &-menu {
+            flex-direction: column;
+            gap: 4.70vw;
+            &--li {
+                font-size: 4.8vw;
+                padding: 0.51em 1em;
+                &::after{
+                    display: none;
+                }
+                &::before{
+                    display: none;
+                }
+            }
+        }
+        &-hide {
+            right: -36vw;
         }
     }
 }
@@ -350,13 +379,12 @@ height: 100vh;
         }
         &--title {
             text-transform: uppercase;
-            font-weight: 700;
             font-size: 1.7vw;
             line-height: 1.2em;
         }
         &--text {
             font-size: 1.25vw;
-            line-height: 1.6em;
+            line-height: 1.2em;
         }
     }
 }
@@ -368,7 +396,7 @@ height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3.33vw 0 2.78vw;
+    padding: 4.70vw 0 2.78vw;
     overflow: hidden;
     &-bg {
         position: absolute;
@@ -404,7 +432,6 @@ height: 100vh;
         margin-bottom: 1.8vw;
         & span {
             font-family: chinese;
-            font-weight: 700;
         }
     }
     &-tel {

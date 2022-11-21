@@ -67,8 +67,8 @@ input {
 @font-face {
   font-family: chinese;
   font-style: normal;
-  font-weight: 700;
-  src: url(/src/fonts/Chinese_bold.woff2);
+  font-weight: 400;
+  src: url(/src/fonts/KaiTi.ttf);
 }
 h1 {
   text-transform: uppercase;
@@ -112,7 +112,6 @@ body {
   text-transform: uppercase;
   line-height: 1.2em;
   font-family: chinese;
-  font-weight: 700;
 }
 
 .section {
@@ -131,7 +130,7 @@ body {
   padding: 1.38vw;
   box-sizing: border-box;
   font-family: chinese;
-  font-weight: 700;
+  letter-spacing: -0.5em;
   cursor: pointer;
 }
 .section-title--black {
@@ -144,13 +143,14 @@ body {
   right: 4vw;
   font-size: 10vw;
   font-family: chinese;
-  font-weight: 700;
 }
 
 .header {
   width: 100%;
   position: fixed;
   z-index: 10;
+  font-family: chinese;
+  letter-spacing: -0.4em;
 }
 .header-hide {
   right: 0;
@@ -169,7 +169,7 @@ body {
   position: relative;
   text-shadow: 0 0 0.2vw var(--color-darker);
   box-shadow: 0 0 0.4vw var(--color-darker);
-  padding: 0.2vw 1vw;
+  padding: 0.3em 1em;
   font-size: 1.25vw;
   line-height: 1.2em;
   cursor: pointer;
@@ -211,6 +211,38 @@ body {
 .header-menu--li.active:before {
   width: 100%;
   height: 100%;
+}
+@media (max-width: 1020px) {
+  .header {
+    width: 35.29vw;
+    height: 100vh;
+    border-left: 0.94vw solid var(--color-main);
+    background-color: var(--color-darker);
+  }
+  .header-wrapper {
+    padding: 4.7vw 2vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header-menu {
+    flex-direction: column;
+    gap: 4.7vw;
+  }
+  .header-menu--li {
+    font-size: 4.8vw;
+    padding: 0.51em 1em;
+  }
+  .header-menu--li::after {
+    display: none;
+  }
+  .header-menu--li::before {
+    display: none;
+  }
+  .header-hide {
+    right: -36vw;
+  }
 }
 
 .mainscreen {
@@ -405,13 +437,12 @@ body {
 }
 .achievements-item--title {
   text-transform: uppercase;
-  font-weight: 700;
   font-size: 1.7vw;
   line-height: 1.2em;
 }
 .achievements-item--text {
   font-size: 1.25vw;
-  line-height: 1.6em;
+  line-height: 1.2em;
 }
 
 .contact {
@@ -420,7 +451,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3.33vw 0 2.78vw;
+  padding: 4.7vw 0 2.78vw;
   overflow: hidden;
 }
 .contact-bg {
@@ -458,7 +489,6 @@ body {
 }
 .contact-text span {
   font-family: chinese;
-  font-weight: 700;
 }
 .contact-tel {
   display: block;
