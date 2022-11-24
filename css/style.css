@@ -106,12 +106,6 @@ body {
   max-width: 62.5vw;
   margin: 0 auto;
 }
-@media (max-width: 1020px) {
-  .container {
-    max-width: 92vw;
-  }
-}
-
 .new-text {
   font-size: 0;
   display: none;
@@ -154,22 +148,6 @@ body {
   font-size: 10vw;
   font-family: chinese;
 }
-@media (max-width: 1020px) {
-  .section-title {
-    width: 80%;
-    min-height: 16.8vw;
-    margin-bottom: 10.66vw;
-    padding: 1em 0.7em;
-    border: var(--color-main) 0.94vw solid;
-  }
-  .section-title--black {
-    border: 0.94vw var(--color-dark) solid;
-  }
-  .section-count {
-    font-size: 15vw;
-  }
-}
-
 .header {
   width: 100%;
   position: fixed;
@@ -238,33 +216,6 @@ body {
   height: 100%;
 }
 @media (max-width: 1020px) {
-  .header {
-    width: 35.29vw;
-    height: 100vh;
-    border-left: 0.94vw solid var(--color-main);
-    background-color: var(--color-darker);
-  }
-  .header-wrapper {
-    padding: 4.7vw 2vw;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .header-menu {
-    flex-direction: column;
-    gap: 4.7vw;
-  }
-  .header-menu--li {
-    font-size: 4.8vw;
-    padding: 0.51em 1em;
-  }
-  .header-menu--li::after {
-    display: none;
-  }
-  .header-menu--li::before {
-    display: none;
-  }
   .header-hide {
     right: -36vw;
   }
@@ -323,18 +274,6 @@ body {
   font-size: 1.5vw;
   line-height: 1.2em;
 }
-@media (max-width: 1020px) {
-  .mainscreen-title {
-    width: 70vw;
-    height: 70vw;
-    border: var(--color-main) solid 0.94vw;
-    margin-bottom: 5.33vw;
-  }
-  .mainscreen-subtitle {
-    font-size: 4.8vw;
-  }
-}
-
 .about {
   display: flex;
   flex-direction: column;
@@ -395,36 +334,6 @@ body {
   line-height: 1.2em;
   margin-bottom: 1.4vw;
 }
-@media (max-width: 1020px) {
-  .about {
-    padding: 5.33vw 0 12vw;
-  }
-  .about-wrapper {
-    flex-direction: column;
-  }
-  .about-photo {
-    margin-bottom: 5.33vw;
-    width: 75%;
-    border: 0.94vw var(--color-main) solid;
-  }
-  .about-photo::after {
-    top: -4vw;
-    left: -4vw;
-    border: 0.47vw solid #fff;
-  }
-  .about-photo::before {
-    bottom: -4vw;
-    right: -4vw;
-    border: 0.47vw solid #fff;
-  }
-  .about-text {
-    font-size: 4.8vw;
-    margin-bottom: 5.33vw;
-    padding: 0;
-    text-align: center;
-  }
-}
-
 .achievements {
   position: relative;
   display: flex;
@@ -510,59 +419,6 @@ body {
   font-size: 1.25vw;
   line-height: 1.2em;
 }
-@media (max-width: 1020px) {
-  .achievements {
-    padding: 5.33vw 0 14vw;
-  }
-  .achievements-wrapper {
-    flex-direction: column;
-    gap: 5.33vw;
-  }
-  .achievements-item {
-    width: 100%;
-    height: 40vh;
-    margin: 0;
-    flex-direction: row;
-    border: var(--color-dark) 0.94vw solid;
-  }
-  .achievements-item:first-child {
-    margin: 0;
-  }
-  .achievements-item:last-child {
-    margin: 0;
-  }
-  .achievements-item--img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    height: 100%;
-    margin-bottom: 0;
-    border-bottom: none;
-  }
-  .achievements-item--img img {
-    -o-object-fit: cover;
-       object-fit: cover;
-    height: 100%;
-    width: auto;
-  }
-  .achievements-item--img::after {
-    display: none;
-  }
-  .achievements-item--info {
-    gap: 4.8vw;
-    padding: 4.8vw;
-    display: inline-flex;
-    width: 70%;
-  }
-  .achievements-item--title {
-    font-size: 5.33vw;
-  }
-  .achievements-item--text {
-    font-size: 4.8vw;
-  }
-}
-
 .contact {
   position: relative;
   width: 100%;
